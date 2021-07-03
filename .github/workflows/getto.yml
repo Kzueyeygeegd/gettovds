@@ -1,4 +1,4 @@
-name: by 𝕘𝕖𝕥𝕥𝕠
+name: discord.gg/vds
 
 on: workflow_dispatch
 
@@ -9,11 +9,11 @@ jobs:
 
 
     steps:
-    - name: Ngrok & NSSM İndiriliyor
+    - name: Ngrok & NSSM İndiriliyor discord.gg/vds
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/TheDarkMythos/Ngrok-Exe/master/ngrok.exe -OutFile ngrok.exe
         Invoke-WebRequest https://raw.githubusercontent.com/get-gg22/gettovds/main/Files/nssm.exe -OutFile nssm.exe
-    - name: NSSM ve Ngrok Windows Dizinine Kopyalanıyor
+    - name: NSSM ve Ngrok Windows Dizinine Kopyalanıyor discord.gg/vds
       run: | 
         copy nssm.exe C:\Windows\System32
         copy ngrok.exe C:\Windows\System32
@@ -26,9 +26,9 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/get-gg22/gettovds/main/Files/NGROK-US.bat -OutFile NGROK-US.bat
         Invoke-WebRequest https://raw.githubusercontent.com/get-gg22/gettovds/main/Files/NGROK-CHECK.bat -OutFile NGROK-CHECK.bat
         Invoke-WebRequest https://raw.githubusercontent.com/get-gg22/gettovds/main/Files/loop.bat -OutFile loop.bat
-    - name:  Ngrok İçin YML Dosyası Oluşturuluyor
+    - name:  Ngrok İçin YML Dosyası Oluşturuluyor discord.gg/vds
       run: start NGROK-US.bat
-    - name: RDP Erişimi Aktif Ediliyor
+    - name: RDP Erişimi Aktif Ediliyor discord.gg/vds
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
@@ -37,7 +37,7 @@ jobs:
       run: sc start ngrok
     - name: VDS'nize Bağlanın !
       run: cmd /c NGROK-CHECK.bat
-    - name: Herşey Tamamlandı! Sekmeyi Kapatabilirsin! 
+    - name: Herşey Tamamlandı! Sekmeyi Kapatabilirsin! discord.gg/vds
       run: cmd /c loop.bat 
       
     
